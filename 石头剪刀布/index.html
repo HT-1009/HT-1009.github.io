@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石头剪刀布</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>请选择</h1>
+
+    <button class="jd" onclick="
+        generateComputerChoice();
+
+        if (computerChoice==='剪刀') {
+            alert(`你出剪刀 电脑出${computerChoice}·平局`)
+        }else if(computerChoice==='石头'){
+            alert(`你出剪刀 电脑出${computerChoice}·电脑赢了`)
+        }else{
+            alert(`你出剪刀 电脑出${computerChoice}·电脑输了`)
+        }
+    ">剪刀</button>
+    <button class="st" onclick="
+        generateComputerChoice();
+
+        if (computerChoice==='石头') {
+            alert(`你出石头 电脑出${computerChoice}·平局`)
+        }else if(computerChoice==='布'){
+            alert(`你出石头 电脑出${computerChoice}·电脑赢了`)
+        }else{
+            alert(`你出石头 电脑出${computerChoice}·电脑输了`)
+        }
+    ">石头</button>
+    <button class="b" onclick="
+        generateComputerChoice();
+
+        if (computerChoice==='布') {
+            alert(`你出布 电脑出${computerChoice}·平局`)
+        }else if(computerChoice==='剪刀'){
+            alert(`你出布 电脑出${computerChoice}·电脑赢了`)
+        }else{
+            alert(`你出布 电脑出${computerChoice}·电脑输了`)
+        }
+    ">布</button>
+
+    <script>
+        let computerChoice='';
+        function generateComputerChoice(){
+            const randomNum=Math.random()*3;
+            console.log(randomNum);
+            if(0<=randomNum && randomNum<1){
+                computerChoice='剪刀';
+            }else if(1<=randomNum && randomNum<2){
+                computerChoice='石头';
+            }else{
+                computerChoice='布';
+            }
+        }
+    </script>
+</body>
+</html>
